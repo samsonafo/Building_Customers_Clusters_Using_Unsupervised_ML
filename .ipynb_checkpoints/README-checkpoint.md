@@ -11,6 +11,10 @@ The Aim of this project is to build an un-supervised machine learning model to s
 3. requirements.txt
 4. model_development.ipynb -  Jupyter notebook containing all case solutions and model development.
 
+### Data
+1. customers : data containing customer details such as 'customer_ID', 'sex', 'registration_date', 'first_rent_date' and 'customer_age'
+2. rentals: data containing rental details of customers over a given time period.
+
 
 ### Approach
 - I built and compared 2 Unsupervised clustering model.
