@@ -64,13 +64,3 @@ Note: (**group numbers in the statement below might vary due to model re-build b
 3. `pip install -r requirements.txt`
 4. run jupyter lab
 5. run the jupyter Notebook (solutions.ipynb,spark_test.ipynb etc.)
-
-**Note: spark_test.ipynb requires a pyspark installation. Read More here: https://bit.ly/3NHy9BM
-
-
-### Possible Problems
-** In case of problems installing matplotlib on a new environment, pls see this: https://stackoverflow.com/questions/21784641/installation-issue-with-matplotlib-python
-
-or try `conda install matplotlib` and then run `pip install -r requirements.txt` again.
-
-** Incase there any challenges with viewing the plotly charts, pls use jupyter notebook in place of Jupyter Lab.
