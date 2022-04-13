@@ -3,6 +3,8 @@
 ### Aim: 
 The Aim of this project is to build an un-supervised machine learning model to segment customers into different groups.
 
+Meduim Article link: https://bit.ly/3M7doOt
+
 #### Language Used : Python --version: 3.8.11
 
 ### Repo Contents
@@ -16,6 +18,10 @@ The Aim of this project is to build an un-supervised machine learning model to s
 2. rentals: data containing rental details of customers over a given time period.
 
 
+Data Exploration/Dashboard: https://bit.ly/3M0dEib
+
+![Dashboard](./img/dashboard.png)
+
 ### Approach
 - I built and compared 2 Unsupervised clustering model.
 
@@ -25,36 +31,41 @@ The Aim of this project is to build an un-supervised machine learning model to s
 **  The number of clusters was randomly selected. (We also discuss how to find the optimal number of clusters to build.)
 
 - Features Used
-    - 'Gender': gender of the customer, either male, female or unknown
-    - 'Age_Years': age in years of the customer
+    - 'sex': gender of the customer, either male, female or unknown
+    - 'customer_age': age in years of the customer
     - 'monthly_rent_average' : customer monthly rent average.
     - 'mean_monthly_rental_revenue', : the mean revenue generated from each customer.
     - 'registration_to_rental_days' : days between registration and first rent.
     - 'mean_monthly_rental_duration' : the mean rental duration of each customer.
 
 - Preprocessing
-    - For the model development, I encoded the 'Gender' column using the OrdinalEncoder.
-    - Normalizer for the 'Age_Years', 'mean_monthly_rental_revenue', 'registration_to_rental_days'.
+    - For the model development, I encoded the 'sex' column using the OrdinalEncoder.
+    - Normalizer for the 'customer_age','mean_monthly_rental_revenue','mean_monthly_rental_duration','registration_to_rental_days'.
     
 - Models/Pipelines
     - K-Means clustering.
     - Mini-Batch K-means clustering.
     
+    
 #### Observations (from Model development)
 Note: (**group numbers in the statement below might vary due to model re-build but group dynamics are consistent)
-- The highest mean 'monthly_rent_average' is that of group 5 with about 5.49 and the lowest being group 1 with 0.52.
-- Although Group 3 and Group 4 are close in monthly_rent_average, they differ in that the customers in group 4 tend to take longer between their registration to their First_Rental.
-- Group 1 is our Highest monthly rental revenue group but group 0 and group 5 gives an higher certainty of the average mean revenue of 5.37 and 5.66 respectively.
-- Group 1 also has the highest mean monthly rental duration (but with a high standard deviation) while group 0 and group 2 have the lowest mean duration but with a lot higher certainty. (This can help with fleet planning).
+- Group 0 contains customers with less ride frequency but with the highest mean monthly rental revenue.
+- Group 4 contains who ride often(to work,school) but possibly for short distances.
+- While Group 1 and Group 3 seem similar in both the mean_monthly_rental_avenue & monthly_rent_average.
+
+#### Deciding the Optimal Number Clusters
+- Elbow Method
+- Silhouette Coefficient
+- Calinski-Harabasz Index
 
 #### Further Work
 - Explore possible Age categories/groups of each customer groups.
 - Exlore possible model locations of each customer groups
+- Recommender System for rent packages based on customer similarities.
     
 
-#### Notes from Model Development
-- I Tried creating a cluster from the Shift Mean cluster algorithm, but it was a bit slow.
-- We could also create more columns as features like 'modal location of rent per customer', 'modal rental type per customer' etc.
+
+
 
 
 ### To Run
